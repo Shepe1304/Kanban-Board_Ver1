@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Kanban-Board_Final.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Shepe's Kanban Board</title>
+  </head>
+  <body>
+    <div class="web-container">
+      <div class="background">
+        <img
+          src="./img/background.webp"
+          alt="background picture of a dark ruins"
+        />
+      </div>
+      <div class="workspace">
+        <div class="workspace-title-container">
+          <div class="workspace-title">Kanban Board</div>
+        </div>
+        <div class="lists-container">
+          <div class="list-container">
+            <div class="list">
+              <div class="list-title" style="background-color: crimson">
+                Backlog
+              </div>
+              <div class="list-items">
+              </div>
+              <div class="options">
+                <div class="add-button" onclick="add(0)">&plus; Add an Item</div>
+                <div class="delete-button">
+                  <span style="font-size: 12px" onclick="del(0)">&#10005;</span> Delete Item
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-container">
+            <div class="list">
+              <div class="list-title" style="background-color: purple">
+                In Progress
+              </div>
+              <div class="list-items"></div>
+              <div class="options">
+                <div class="add-part">
+                  <div class="add-button" onclick="add(1)">&plus; Add an Item</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-container">
+            <div class="list">
+              <div class="list-title" style="background-color: darkcyan">
+                Complete
+              </div>
+              <div class="list-items"></div>
+              <div class="options">
+                <div class="add-part">
+                  <div class="add-button" onclick="add(2)">&plus; Add an Item</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="list-container">
+            <div class="list">
+              <div class="list-title" style="background-color: darkgoldenrod">
+                On Hold
+              </div>
+              <div class="list-items"></div>
+              <div class="options">
+                <div class="add-part">
+                  <div class="add-button" onclick="add(3)">+ Add an Item</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Kanban-Board_Final.js"></script>
+  </body>
+</html>
