@@ -142,9 +142,12 @@ function done(listId) {
 //  https://www.w3schools.com/html/html5_draganddrop.asp
 //  https://stackoverflow.com/questions/4793604/how-to-insert-an-element-after-another-element-in-javascript-without-using-a-lib
 
+let elem;
+
 function drag(e) {
   if (editing) return;
   e.dataTransfer.setData("text", e.target.id);
+  elem = e.target;
 }
 
 function allowDrop(e) {
@@ -155,8 +158,10 @@ function allowDrop(e) {
 function onDrop(e) {
   if (editing) return;
   e.preventDefault();
-  let data = e.dataTransfer.getData("text");
-  let elem = document.getElementById(data);
+  // let data = e.dataTransfer.getData("text");
+  // let elem = document.getElementById(data);
+  
+  console.log(elem);
   elem.nextSibling.remove();
   let sp = document.createElement("div");
   sp.setAttribute("class", "space");
