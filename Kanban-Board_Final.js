@@ -83,7 +83,8 @@ function del(listId) {
     listItems[currentItemId].classList.remove("list-item");
     listItems[currentItemId].setAttribute("contenteditable", "false");
     listItems[currentItemId].textContent = "";
-    listItems[currentItemId].nextSibling.remove();
+    if (listItems[currentItemId].nextSibling)
+      listItems[currentItemId].nextSibling.remove();
     done(listId);
   }
   addButtons[listId].classList.remove("adding");
@@ -124,7 +125,8 @@ function edit(itemId, listId) {
 
 function done(listId) {
   if (newestItem.textContent == "") {
-    newestItem.nextSibling.remove();
+    if (newestItem.nextSibling)
+      newestItem.nextSibling.remove();
     newestItem.remove();
   }
   if (listId == -1) listId = currentListId;
@@ -160,8 +162,6 @@ function onDrop(e) {
   e.preventDefault();
   // let data = e.dataTransfer.getData("text");
   // let elem = document.getElementById(data);
-  
-  console.log(elem);
   elem.nextSibling.remove();
   let sp = document.createElement("div");
   sp.setAttribute("class", "space");
